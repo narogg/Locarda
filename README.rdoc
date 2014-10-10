@@ -1,4 +1,4 @@
 == README
 
-can be accessed at http://cryptic-tundra-1123.herokuapp.com/
+can be accessed at http://locarda.herokuapp.com/
 Rails 4 backend app.
