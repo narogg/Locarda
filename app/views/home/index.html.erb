@@ -1,0 +1,48 @@
+<!--<h1><span class="label label-danger">@ Mjesta s LocalZoo-om</span></h1><br>-->
+
+<% @places.each do |place| %>
+
+<div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+					<!--<span class="label label-default"></span>-->
+                        <h3><strong><%= place.name %>&nbsp;</strong><td><%= place.description %></td></h3></h3>
+                </div>
+			<div class="panel-body">
+			<table class ="table">
+			<tr>
+			<td>
+			<%= image_tag(place.image_url, :class => 'img-rounded') %></td>			
+			<td><strong><%= place.rewards %>&nbsp; Vi imate: </strong><span class="badge alert-info">
+			
+			<%# If there is no card, user has no points, so display zero - spaghetti code for sure%>
+			<% if cart = Cart.find_by(user_id: current_user.id, place_id: place.id).present?%>
+			<%cart = Cart.find_by(user_id: current_user.id, place_id: place.id)%>
+			<%=cart.points%>
+			<%else%>
+			0
+			<% end %>
+			</span></td>			
+			<td><%= button_to 'Check in', carts_path(:place_id => place), class: "btn btn-info pull-right" %></td>
+			
+			</tr>
+			
+			<!--
+			<td><%= link_to 'Show', place %></td>
+			<td><%= link_to 'Edit', edit_place_path(place) %></td>			
+			<td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			-->
+			
+								
+			<tr>			
+			<td><footer class="text-muted"><%= place.full_name %> </footer> </td>			
+			</tr>
+			</table>
+			</div>
+			
+	</div>
+<% end %>
+
+
+<br>
+

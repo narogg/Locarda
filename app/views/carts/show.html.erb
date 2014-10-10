@@ -1,0 +1,22 @@
+<p>
+  <strong>User:</strong>
+  <%= @cart.user_id %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @cart.place_id %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= @cart.points %>
+</p>
+
+<p>
+  <strong>Visits:</strong>
+  <%= @cart.checked_num %>
+</p>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

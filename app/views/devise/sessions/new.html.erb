@@ -1,0 +1,140 @@
+<style>
+   body {
+        background:#c33;
+    }
+
+    .panel-transparent {
+        background: none;
+    }
+
+    .panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.2)!important;
+    }
+
+    .panel-transparent .panel-body{
+        #background: rgba(46, 51, 56, 0.2)!important;
+		background: rgba(122, 130, 136, 0.2)!important;
+    }
+	.panel-transparent .panel-footer{
+        background: rgba(46, 51, 56, 0.2)!important;
+    }
+</style>
+
+<body style="background-image:url(/images/city_lights.jpg) ">
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-6">
+	<div class="panel panel-primary panel-transparent">
+		<!--<div class="panel panel-primary">-->
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Locarda</h3>
+                </div>
+			<div class="panel-body">
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div><%= f.label :email %><br />
+			<%= f.email_field :email, autofocus: true %></div>
+	
+			<div><%= f.label :password %><br />
+			<%= f.password_field :password, autocomplete: "off" %></div>
+	
+			<% if devise_mapping.rememberable? -%>
+			<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div><br>
+			<% end -%>
+	
+			<div><%= f.submit "Sign in",class: "btn btn-large btn-danger"  %></div><br>
+			<% end %>
+			</div>
+			<div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">	
+						<%= render "devise/shared/links" %>
+						<%= link_to 'Administrator login', new_admin_session_path %></td>
+						</div>
+					</div>
+			</div>
+			
+		</div>
+	</div>	 
+</div>
+
+<a href="https://play.google.com/store/search?q=pub:locarda.net">
+  <img alt="Get it on Google Play"
+       src="/images/en_generic_rgb_wo_60.png" />
+</a>
+&nbsp;&nbsp;
+<a href="http://store.apple.com/us">
+  <img alt="Available on Iphone"
+       src="/images/App-Store.png" />
+</a>
+		
+</div>
+
+<!--
+<style>
+.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.input-group { margin-bottom:10px; }
+.separator { border-right: 1px solid #dfdfe0; }
+.facebook,.twitter { min-width:170px; }
+.facebook { background-color:#354E84;color:#fff; }
+.twitter { background-color:#00A5E3;color:#fff; }
+.facebook:hover,.twitter:hover { color:#fff; }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Log in</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 separator social-login-box"> <br />
+                            <a href="http://www.jquery2dotnet.com" class="btn facebook btn-block" role="button">Log in using Facebook</a>
+                            <br />
+                            <a href="http://www.jquery2dotnet.com" class="btn twitter btn-block" role="button">Log in using Twitter</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 login-box">
+                            <form role="form">
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="text" class="form-control" placeholder="Username" required autofocus />
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" class="form-control" placeholder="Password" required />
+                            </div>
+                            <p>
+                                <a href="http://www.jquery2dotnet.com">Lost your password?</a></p>
+                            Don't have an account? <a href="http://www.jquery2dotnet.com">Sign up here</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="Remember">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <button type="button" class="btn btn-labeled btn-success">
+                                <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Success</button>
+                            <button type="button" class="btn btn-labeled btn-danger">
+                                <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->

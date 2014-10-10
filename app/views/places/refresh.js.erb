@@ -1,0 +1,10 @@
+//alert ("refresh part je erb");
+$('#clients_table').html('<%=escape_javascript(render 'clients', carts: @carts)%>');
+//  This one works, appends rowa for just checked clients, not the whole table
+//  To be used when model propagades change
+	//$('#clients_table > tbody:first').append('<%=escape_javascript(render 'checked_clients', carts: @carts)%>');
+//$(liData).appendTo('.products').fadeIn('slow');
+//$("#clients_table tbody tr:nth-child(2)").fadeOut('slow').fadeIn(3000);
+//$('#myTable > tbody:last').append('<tr>...</tr><tr>...</tr>');
+
+

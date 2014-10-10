@@ -1,0 +1,37 @@
+<h2>Prijave/korisnici</h2>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr class="info">
+      <th>Mjesto</th>
+      <th>Korisnik</th>
+      <th>Bodovi</th>
+      <th>Ponuda</th>
+	  <th>Prijave</th>
+      <th>Zadnja prijava</th>
+      <th></th>
+	  <th></th>
+	  <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+      <tr>
+	    <td><%= cart.place.name %></td>
+		<td><%= cart.user.email %></td>
+        <td><%= cart.points %></td>
+		<td><%= cart.place.rewards %></td>
+		<td><%= cart.checked_num %></td>
+		<td><%= cart.updated_at.strftime("%d.%m.%Y. %H:%M:%S") %></td>
+        <td><%= link_to 'Show', cart %></td>
+        <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
+        <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cart', new_cart_path %>

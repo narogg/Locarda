@@ -1,0 +1,20 @@
+
+
+
+<% @carts.each do |cart| %>
+	
+	<tr>
+	<td>
+	<%= cart.user.email %></td>
+	<td><strong><%= cart.place.name %></strong></td>
+	<td><%= cart.updated_at.strftime("%d.%m.%Y. %H:%M:%S") %></td>
+	<td><span class="badge alert-default"><%= cart.points %></span></td>
+	<td>    
+	<%= button_to(" + ", cart_path(id:cart.id, :place_id => cart.place.id, :user_id =>cart.user.id), :method => :patch,  :class=> "btn btn-default") %> </td>
+    <td>
+	<%= button_to(" - ", carts_subtract_path(id:cart.id, :place_id => cart.place.id, :user_id =>cart.user.id),  :class=> "btn btn-default") %></td>
+	</tr>
+
+	
+	
+<% end %>
