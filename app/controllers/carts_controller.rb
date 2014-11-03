@@ -22,7 +22,32 @@ class CartsController < ApplicationController
   # GET /carts/1/edit
   def edit
   end
+  
+  
+  def checkin
+  
+    #logger.error("u checkinu sam, placeid iz dolaznog jsona je: #{ params[:placeId]}")
+	#logger.error("u checkinu sam, placeid iz dolaznog jsona je: #{ params[:userId]}")
+	#id: params[:id]
+	check_in = Cart.find_or_initialize_by(user_id: params[:userId], place_id: params[:placeId])	
+	check_in.increment(:checked_num, by = 1)	
+	
+	if check_in.new_record?		  
+	  check_in.save!	  
+	else	
+	 check_in.update!(checked_num: check_in.checked_num)
+	end
+	 
+	#render text: 'Thanks for sending a GET request with cURL!'
+	render json: {status: 'Success'}
 
+	#respond_to do |format|	
+    ##format.json { render action: 'show', status: :created, location: @cart }
+	#format.json { status: :created, location: @cart }
+    #end		
+	
+  end
+  
   # POST /carts
   # POST /carts.json
   def create    

@@ -8,6 +8,7 @@ LocalZoo::Application.routes.draw do
   resources :places
 
   devise_for :users
+  resources :users
   
   # This route enables me to call carts_subtract with params to subtract points from user's card
   post "carts/subtract", as: :carts_subtract
@@ -36,6 +37,7 @@ LocalZoo::Application.routes.draw do
   
   
   get "home/api", as: :api
+  post "carts/checkin", as: :checkin
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
