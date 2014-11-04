@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
   
   def api
-  @places = Place.all
+  @places = Place.all.order('id ASC')
   render :json => @places
   end
 end
