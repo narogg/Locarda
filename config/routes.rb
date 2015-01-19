@@ -1,4 +1,6 @@
 LocalZoo::Application.routes.draw do
+  resources :registrations
+
   get "home/index"
   devise_for :admins
   resources :carts
@@ -38,6 +40,7 @@ LocalZoo::Application.routes.draw do
   
   get "home/api", as: :api
   post "carts/checkin", as: :checkin
+  post "registrations/register", as: :register
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
