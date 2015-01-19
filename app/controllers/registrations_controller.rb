@@ -3,7 +3,7 @@ class RegistrationsController < ApplicationController
   respond_to :html
 
   def register
-  
+	
     # A user will have one registration record for the mobile device. 
 	# If it's a new user/device, regID is saved into Registration model 
 	# else it is updated (google GCM changes regIDs)
